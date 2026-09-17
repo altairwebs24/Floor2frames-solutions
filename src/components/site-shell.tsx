@@ -15,7 +15,7 @@ export function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
     <Link to="/" className="group flex items-center" aria-label="Floor 2 Frames home">
       <img
-        src={logoAsset.url}
+        src={media.logo}
         alt="Floor 2 Frames Solutions"
         className={compact ? "h-12 w-12 rounded-full object-cover" : "h-14 w-36 object-contain object-left md:w-44"}
       />
