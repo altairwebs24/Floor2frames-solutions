@@ -26,32 +26,48 @@ export function BrandMark({ compact = false }: { compact?: boolean }) {
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-ivory/10 bg-ink/90 backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
+    <header className="relative z-30 bg-ink text-ivory">
+      {/* subtle engraved texture + soft gold sheen */}
+      <div className="header-texture pointer-events-none absolute inset-0" aria-hidden="true" />
+
+      {/* top hairline */}
+      <div className="relative h-px w-full bg-gradient-to-r from-transparent via-gold to-transparent opacity-60" aria-hidden="true" />
+
+      <div className="relative mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
         <BrandMark />
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-9 lg:flex" aria-label="Primary navigation">
           {navigation.map((item) => (
             <Link key={item.to} to={item.to} className="nav-link" activeProps={{ className: "nav-link nav-link-active" }}>
               {item.label}
             </Link>
           ))}
         </nav>
-        <Link to="/contact" className="btn-gold hidden lg:inline-flex">
-          Request a quote <ArrowUpRight size={16} />
+        <Link to="/contact" className="btn-gold-outline hidden lg:inline-flex">
+          Request a quote <ArrowUpRight size={15} />
         </Link>
         <button className="icon-button lg:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>
           {open ? <X /> : <Menu />}
         </button>
       </div>
+
       {open && (
-        <nav className="border-t border-ivory/10 bg-ink px-5 py-5 lg:hidden" aria-label="Mobile navigation">
+        <nav className="relative border-t border-gold/20 bg-charcoal px-5 py-5 lg:hidden" aria-label="Mobile navigation">
           {navigation.map((item) => (
-            <Link key={item.to} to={item.to} onClick={() => setOpen(false)} className="block border-b border-ivory/10 py-4 text-sm uppercase tracking-luxe text-ivory">
+            <Link key={item.to} to={item.to} onClick={() => setOpen(false)} className="block border-b border-gold/10 py-4 text-sm uppercase tracking-luxe text-ivory last:border-b-0 hover:text-gold">
               {item.label}
             </Link>
           ))}
         </nav>
       )}
+
+      {/* bottom hairline */}
+      <div className="relative h-px w-full bg-gradient-to-r from-transparent via-gold to-transparent opacity-60" aria-hidden="true" />
+
+      {/* corner accents */}
+      <div className="pointer-events-none absolute left-1 top-1 h-2 w-2 border-l border-t border-gold/40" aria-hidden="true" />
+      <div className="pointer-events-none absolute right-1 top-1 h-2 w-2 border-r border-t border-gold/40" aria-hidden="true" />
+      <div className="pointer-events-none absolute bottom-1 left-1 h-2 w-2 border-b border-l border-gold/40" aria-hidden="true" />
+      <div className="pointer-events-none absolute bottom-1 right-1 h-2 w-2 border-b border-r border-gold/40" aria-hidden="true" />
     </header>
   );
 }
