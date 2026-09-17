@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Layers3, ShieldCheck, Sparkles, MoveRight } from "lucide-react";
-import heroVideo from "../assets/floor2frames-hero.mp4.asset.json";
+import heroVideo from "../assets/floor2frames-hero.webm.asset.json";
 import bathroom from "../assets/seamless-bathroom.jpg.asset.json";
 import commercial from "../assets/commercial-finish.jpg.asset.json";
 import wall from "../assets/decorative-wall.jpg.asset.json";
@@ -26,7 +26,7 @@ const services = [
 function HomePage() {
   return <>
     <section className="relative min-h-[92svh] overflow-hidden bg-ink pt-20 text-ivory">
-      <video className="absolute inset-0 h-full w-full object-cover opacity-55" src={heroVideo.url} autoPlay muted loop playsInline aria-label="Floor 2 Frames completed interiors" />
+      <video className="absolute inset-0 h-full w-full object-cover opacity-55" autoPlay muted loop playsInline aria-label="Floor 2 Frames completed interiors"><source src={heroVideo.url} type="video/webm" /></video>
       <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--ink)_0%,color-mix(in_oklab,var(--ink)_70%,transparent)_48%,color-mix(in_oklab,var(--ink)_20%,transparent)_100%)]" />
       <div className="relative mx-auto flex min-h-[calc(92svh-5rem)] max-w-7xl items-end px-5 pb-16 lg:px-8 lg:pb-24">
         <div className="max-w-4xl animate-rise">
