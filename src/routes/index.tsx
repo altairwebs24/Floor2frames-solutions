@@ -1,9 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Layers3, ShieldCheck, Sparkles, MoveRight } from "lucide-react";
-import heroVideo from "../assets/floor2frames-hero.webm.asset.json";
-import bathroom from "../assets/seamless-bathroom.jpg.asset.json";
-import commercial from "../assets/commercial-finish.jpg.asset.json";
-import wall from "../assets/decorative-wall.jpg.asset.json";
+import { media } from "../lib/media";
 import { QuoteBand } from "../components/site-shell";
 
 export const Route = createFileRoute("/")({
@@ -26,7 +23,7 @@ const services = [
 function HomePage() {
   return <>
     <section className="relative min-h-[92svh] overflow-hidden bg-ink pt-20 text-ivory">
-      <video className="absolute inset-0 h-full w-full object-cover opacity-55" autoPlay muted loop playsInline aria-label="Floor 2 Frames completed interiors"><source src={heroVideo.url} type="video/webm" /></video>
+      <video className="absolute inset-0 h-full w-full object-cover opacity-55" autoPlay muted loop playsInline aria-label="Floor 2 Frames completed interiors"><source src={media.heroVideo} type="video/webm" /></video>
       <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--ink)_0%,color-mix(in_oklab,var(--ink)_70%,transparent)_48%,color-mix(in_oklab,var(--ink)_20%,transparent)_100%)]" />
       <div className="relative mx-auto flex min-h-[calc(92svh-5rem)] max-w-7xl items-end px-5 pb-16 lg:px-8 lg:pb-24">
         <div className="max-w-4xl animate-rise">
@@ -44,9 +41,9 @@ function HomePage() {
     </div></section>
 
     <section className="bg-charcoal py-20 text-ivory md:py-28"><div className="mx-auto max-w-7xl px-5 lg:px-8"><p className="eyebrow">Selected work</p><div className="mt-10 grid gap-5 md:grid-cols-12">
-      <figure className="group md:col-span-7"><img className="aspect-[4/3] w-full object-cover" src={bathroom.url} alt="Seamless cementitious bathroom with black fixtures"/><figcaption className="mt-5 flex justify-between gap-4"><div><h3 className="font-display text-3xl">Quiet precision</h3><p className="mt-1 text-sm text-ivory/55">Seamless walls and floor · Residential bathroom</p></div><ArrowUpRight className="text-gold"/></figcaption></figure>
-      <figure className="group md:col-span-5 md:pt-24"><img className="aspect-square w-full object-cover" src={wall.url} alt="Decorative polished grey feature wall"/><figcaption className="mt-5 flex justify-between gap-4"><div><h3 className="font-display text-3xl">Tactile restraint</h3><p className="mt-1 text-sm text-ivory/55">Decorative wall finish · Feature interior</p></div><ArrowUpRight className="text-gold"/></figcaption></figure>
-      <figure className="md:col-span-9 md:col-start-3 md:mt-14"><img className="aspect-[16/8] w-full object-cover" src={commercial.url} alt="Commercial interior with concrete wall panels and wood flooring"/><figcaption className="mt-5 flex justify-between gap-4"><div><h3 className="font-display text-3xl">Commercial character</h3><p className="mt-1 text-sm text-ivory/55">Wall panels and wooden flooring · Workplace interior</p></div><ArrowUpRight className="text-gold"/></figcaption></figure>
+      <figure className="group md:col-span-7"><img className="aspect-[4/3] w-full object-cover" src={media.bathroom} alt="Seamless cementitious bathroom with black fixtures"/><figcaption className="mt-5 flex justify-between gap-4"><div><h3 className="font-display text-3xl">Quiet precision</h3><p className="mt-1 text-sm text-ivory/55">Seamless walls and floor · Residential bathroom</p></div><ArrowUpRight className="text-gold"/></figcaption></figure>
+      <figure className="group md:col-span-5 md:pt-24"><img className="aspect-square w-full object-cover" src={media.wall} alt="Decorative polished grey feature wall"/><figcaption className="mt-5 flex justify-between gap-4"><div><h3 className="font-display text-3xl">Tactile restraint</h3><p className="mt-1 text-sm text-ivory/55">Decorative wall finish · Feature interior</p></div><ArrowUpRight className="text-gold"/></figcaption></figure>
+      <figure className="md:col-span-9 md:col-start-3 md:mt-14"><img className="aspect-[16/8] w-full object-cover" src={media.commercial} alt="Commercial interior with concrete wall panels and wood flooring"/><figcaption className="mt-5 flex justify-between gap-4"><div><h3 className="font-display text-3xl">Commercial character</h3><p className="mt-1 text-sm text-ivory/55">Wall panels and wooden flooring · Workplace interior</p></div><ArrowUpRight className="text-gold"/></figcaption></figure>
     </div></div></section>
 
     <section className="bg-ivory py-20 md:py-24"><div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-3 lg:px-8">{[[ShieldCheck,"Premium quality","Materials and finishes selected to perform beautifully."],[Sparkles,"Expert workmanship","Refined execution, from preparation to final detail."],[Layers3,"Complete solutions","Flooring, walls and frames delivered as one vision."]].map(([Icon,title,text]) => { const I=Icon as typeof ShieldCheck; return <div key={title as string} className="border-t border-ink pt-6"><I className="text-gold"/><h3 className="mt-8 font-display text-3xl">{title as string}</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">{text as string}</p></div>})}</div></section>

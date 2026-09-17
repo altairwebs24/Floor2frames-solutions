@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Award, Handshake, ScanLine } from "lucide-react";
-import commercial from "../assets/commercial-finish.jpg.asset.json";
+import { media } from "../lib/media";
 import { PageIntro, QuoteBand } from "../components/site-shell";
 
 export const Route = createFileRoute("/about")({ head: () => ({ meta: [

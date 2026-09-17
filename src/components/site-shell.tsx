@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ArrowUpRight, Phone, Mail, MapPin } from "lucide-react";
 import { useState, type ReactNode } from "react";
-import logoAsset from "../assets/floor2frames-logo.png.asset.json";
+import { media } from "../lib/media";
 
 const navigation = [
   { label: "Home", to: "/" as const },
