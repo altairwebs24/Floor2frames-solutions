@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ArrowUpRight, Phone, Mail, MapPin } from "lucide-react";
 import { useState, type ReactNode } from "react";
+import logoAsset from "../assets/floor2frames-logo.png.asset.json";
 
 const navigation = [
   { label: "Home", to: "/" as const },
@@ -12,16 +13,12 @@ const navigation = [
 
 export function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
-    <Link to="/" className="group flex items-center gap-3" aria-label="Floor 2 Frames home">
-      <span className="grid h-11 w-11 place-items-center border border-gold font-display text-xl font-semibold text-gold transition-colors group-hover:bg-gold group-hover:text-ink">
-        F<span className="text-sm">2</span>
-      </span>
-      {!compact && (
-        <span className="leading-none">
-          <span className="block text-sm font-semibold tracking-brand text-ivory">FLOOR <b className="text-gold">2</b> FRAMES</span>
-          <span className="mt-1 block text-[9px] tracking-luxe text-gold">SOLUTIONS</span>
-        </span>
-      )}
+    <Link to="/" className="group flex items-center" aria-label="Floor 2 Frames home">
+      <img
+        src={logoAsset.url}
+        alt="Floor 2 Frames Solutions"
+        className={compact ? "h-12 w-12 rounded-full object-cover" : "h-14 w-36 object-contain object-left md:w-44"}
+      />
     </Link>
   );
 }
